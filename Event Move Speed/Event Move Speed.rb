@@ -1,11 +1,15 @@
 #-------------------------------------------------------------------------------
-# Event Move Speed v1.1
+# Event Move Speed v1.2
 # by MUR (https://github.com/murlab)
 # BSD 3-Clause License
 # Free for use with both free and commercial RPG Maker games.
 #-------------------------------------------------------------------------------
 
 class Game_CharacterBase
+  
+  attr_accessor :event_speed
+  attr_accessor :next_frame
+  
   alias mur_game_charbase_init initialize
   def initialize
     mur_game_charbase_init
@@ -13,14 +17,6 @@ class Game_CharacterBase
     @next_frame = 1
   end
  
-  def set_event_speed(speed)
-    @event_speed = speed
-  end
-
-  def set_next_frame(next_frame)
-    @next_frame = next_frame
-  end
-  
   def real_move_speed  
     @move_speed + @event_speed
   end
@@ -39,19 +35,16 @@ class Game_Map
   alias mur_game_map_setup setup
   def setup(map_id)
     mur_game_map_setup(map_id)
-    set_events_speed
-  end
-  
-  def set_events_speed
+
     @events.values.each { |e|
-      next if !e.list
+      next if e.list.nil?
       if e.list[0].code == 108
         if e.list[0].parameters[0] =~ /<speed:(.*)>/
-          e.set_event_speed($1.to_f)
+          e.event_speed = $1.to_f
           #puts e.get_event_speed
         end
         if e.list[0].parameters[0] =~ /<nextframe:(.*)>/
-          e.set_next_frame($1.to_f)
+          e.next_frame = $1.to_f
           #puts e.@next_frame
         end
       end
