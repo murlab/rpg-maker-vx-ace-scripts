@@ -38,7 +38,7 @@ class Game_Map
       next if !e.list
       if e.list[0].code == 108 && e.list[0].parameters[0] =~ /<speed:(.*)>/
         e.set_event_speed($1.to_f)
-        puts e.get_event_speed
+#        puts e.get_event_speed
       end
     }
   end
