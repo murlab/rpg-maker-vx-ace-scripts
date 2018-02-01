@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-# Event Move Speed v1.2
+# Event Move Speed v1.2a
 # by MUR (https://github.com/murlab)
 # BSD 3-Clause License
 # Free for use with both free and commercial RPG Maker games.
@@ -41,11 +41,9 @@ class Game_Map
       if e.list[0].code == 108
         if e.list[0].parameters[0] =~ /<speed:(.*)>/
           e.event_speed = $1.to_f
-          #puts e.get_event_speed
         end
         if e.list[0].parameters[0] =~ /<nextframe:(.*)>/
           e.next_frame = $1.to_f
-          #puts e.@next_frame
         end
       end
     }
