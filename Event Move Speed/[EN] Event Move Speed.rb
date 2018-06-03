@@ -4,6 +4,17 @@
 # BSD 3-Clause License
 # Free for use with both free and commercial RPG Maker games.
 #-------------------------------------------------------------------------------
+# Usage, add comment line into event:
+#
+# <speed: NN> where NN is a floating-point number. 
+# The value 0 is the standard speed of movement (taking into event's settings).
+# Number to less than zero, the speed will decrease.
+# If you increase the value the character will "fly".
+#
+# <nextframe: NN> where NN is the number that will be added to change
+# the next frame. By default, it is 1, but if, for example, you set
+# the value to 0.1, it will be very slow.
+# And if you specify a number greater than 1, then the opposite is very fast.
 
 class Game_CharacterBase
   

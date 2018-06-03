@@ -1,10 +1,10 @@
-#-------------------------------------------------------------------------------
+﻿#-------------------------------------------------------------------------------
 # Yanfly Engine Ace -  Ace Shop Item Features Add-On v0.2
 # by MUR (https://github.com/murlab)
 # BSD 3-Clause License
-# Free for use with both free and commercial RPG Maker games.
-# Requires Yanfly's Ace Shop Options.
-# Put this script after Yanfly's Shop Options script
+# # Свободное использование как для бесплатных, так и коммерческих проектов.
+# Небходим плагин Yanfly's Ace Shop Options.
+# Расположите этот скрипт после Yanfly's Shop Options
 #-------------------------------------------------------------------------------
 
 module YEA
